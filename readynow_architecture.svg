@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1280 700" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <rect x="0" y="0" width="1280" height="700" fill="#f7f8fb"></rect>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"></path>
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa5b6"></path>
+    </marker>
+  </defs>
+
+  <!-- ============ User ============ -->
+  <rect x="530" y="16" width="200" height="56" rx="12" fill="#e8f6ef" stroke="#2fa876" stroke-width="1.6"></rect>
+  <text x="630" y="49" text-anchor="middle" font-size="15" font-weight="650" fill="#14532d">User</text>
+
+  <!-- User <-> Root arrows -->
+  <line x1="600" y1="72" x2="600" y2="146" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arrow)"></line>
+  <rect x="548" y="98" width="104" height="18" fill="#f7f8fb"></rect>
+  <text x="600" y="111" text-anchor="middle" font-size="11" fill="#5b6472">chat message</text>
+
+  <line x1="660" y1="146" x2="660" y2="72" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arrow)"></line>
+  <rect x="661" y="98" width="104" height="18" fill="#f7f8fb"></rect>
+  <text x="713" y="111" text-anchor="middle" font-size="11" fill="#5b6472">final response</text>
+
+  <!-- ============ Deployment boundary ============ -->
+  <rect x="36" y="140" width="1208" height="356" rx="16" fill="none" stroke="#9aa5b6" stroke-width="1.6" stroke-dasharray="7 6"></rect>
+  <text x="58" y="166" font-size="12.5" font-weight="650" letter-spacing="0.02em" fill="#5b6472">VERTEX AI AGENT ENGINE — DEPLOYED</text>
+
+  <!-- ============ Root agent ============ -->
+  <rect x="540" y="182" width="180" height="72" rx="12" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.8"></rect>
+  <text x="630" y="212" text-anchor="middle" font-size="15" font-weight="650" fill="#262a5e">root_agent</text>
+  <text x="630" y="230" text-anchor="middle" font-size="11.5" fill="#565c96">"ReadyNow" — coordinator</text>
+
+  <!-- Root -> Callbacks -->
+  <line x1="720" y1="200" x2="906" y2="200" stroke="#9aa5b6" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#arrowDash)"></line>
+  <rect x="748" y="182" width="118" height="16" fill="#f7f8fb"></rect>
+  <text x="807" y="194" text-anchor="middle" font-size="11" fill="#5b6472">every turn, all agents</text>
+
+  <!-- Callbacks box -->
+  <rect x="910" y="168" width="300" height="100" rx="12" fill="#f5f6f8" stroke="#9aa5b6" stroke-width="1.4" stroke-dasharray="4 4"></rect>
+  <text x="928" y="192" font-size="11" font-weight="650" letter-spacing="0.02em" fill="#444c59">CALLBACKS</text>
+  <text x="928" y="212" font-size="11.5" fill="#444c59">log_user_prompt / log_model_response</text>
+  <text x="928" y="230" font-size="11.5" fill="#444c59">moderate_user_prompt —</text>
+  <text x="928" y="246" font-size="11.5" fill="#444c59">US-only · on-topic · not malicious</text>
+
+  <!-- Root -> branches -->
+  <line x1="580" y1="254" x2="220" y2="316" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arrow)"></line>
+  <line x1="620" y1="254" x2="490" y2="316" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arrow)"></line>
+  <line x1="680" y1="254" x2="880" y2="304" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arrow)"></line>
+
+  <!-- ============ Weather agent ============ -->
+  <rect x="100" y="316" width="240" height="76" rx="12" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.8"></rect>
+  <text x="220" y="346" text-anchor="middle" font-size="15" font-weight="650" fill="#262a5e">weather_agent</text>
+  <text x="220" y="364" text-anchor="middle" font-size="11.5" fill="#565c96">US weather conditions &amp; forecasts</text>
+
+  <!-- ============ Routes agent ============ -->
+  <rect x="380" y="316" width="240" height="76" rx="12" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.8"></rect>
+  <text x="500" y="346" text-anchor="middle" font-size="15" font-weight="650" fill="#262a5e">routes_agent</text>
+  <text x="500" y="364" text-anchor="middle" font-size="11.5" fill="#565c96">evacuation / driving directions</text>
+
+  <!-- ============ QA team container ============ -->
+  <rect x="660" y="296" width="560" height="150" rx="14" fill="#f4f2fc" stroke="#8b7fd6" stroke-width="1.6" stroke-dasharray="6 5"></rect>
+  <text x="682" y="320" font-size="11" font-weight="650" letter-spacing="0.02em" fill="#55499b">QA_TEAM — SEQUENTIALAGENT</text>
+
+  <rect x="682" y="334" width="150" height="88" rx="10" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.6"></rect>
+  <text x="757" y="368" text-anchor="middle" font-size="13.5" font-weight="650" fill="#262a5e">search_agent</text>
+  <text x="757" y="384" text-anchor="middle" font-size="11.5" fill="#565c96">drafts via</text>
+  <text x="757" y="398" text-anchor="middle" font-size="11.5" fill="#565c96">Google Search</text>
+
+  <line x1="832" y1="378" x2="866" y2="378" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+  <rect x="870" y="334" width="150" height="88" rx="10" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.6"></rect>
+  <text x="945" y="368" text-anchor="middle" font-size="13.5" font-weight="650" fill="#262a5e">critique_agent</text>
+  <text x="945" y="384" text-anchor="middle" font-size="11.5" fill="#565c96">reviews the</text>
+  <text x="945" y="398" text-anchor="middle" font-size="11.5" fill="#565c96">draft</text>
+
+  <line x1="1020" y1="378" x2="1054" y2="378" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+  <rect x="1058" y="334" width="150" height="88" rx="10" fill="#eef1ff" stroke="#5b63d3" stroke-width="1.6"></rect>
+  <text x="1133" y="368" text-anchor="middle" font-size="13.5" font-weight="650" fill="#262a5e">refine_agent</text>
+  <text x="1133" y="384" text-anchor="middle" font-size="11.5" fill="#565c96">rewrites using</text>
+  <text x="1133" y="398" text-anchor="middle" font-size="11.5" fill="#565c96">the critique</text>
+
+  <!-- ============ External services (outside deployment) ============ -->
+  <text x="58" y="522" font-size="11" font-weight="650" letter-spacing="0.02em" fill="#5b6472">EXTERNAL SERVICES</text>
+
+  <line x1="180" y1="392" x2="150" y2="536" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+  <line x1="260" y1="392" x2="330" y2="536" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+  <line x1="500" y1="392" x2="540" y2="536" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+  <line x1="757" y1="422" x2="757" y2="536" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+  <rect x="70" y="536" width="160" height="66" rx="10" fill="#fff6ea" stroke="#e0a232" stroke-width="1.6"></rect>
+  <text x="150" y="562" text-anchor="middle" font-size="13" font-weight="650" fill="#6b4a10">Google Maps</text>
+  <text x="150" y="580" text-anchor="middle" font-size="11.5" fill="#6b4a10">Geocoding API</text>
+
+  <rect x="250" y="536" width="160" height="66" rx="10" fill="#fff6ea" stroke="#e0a232" stroke-width="1.6"></rect>
+  <text x="330" y="562" text-anchor="middle" font-size="13" font-weight="650" fill="#6b4a10">National Weather</text>
+  <text x="330" y="580" text-anchor="middle" font-size="11.5" fill="#6b4a10">Service API</text>
+
+  <rect x="460" y="536" width="160" height="66" rx="10" fill="#fff6ea" stroke="#e0a232" stroke-width="1.6"></rect>
+  <text x="540" y="562" text-anchor="middle" font-size="13" font-weight="650" fill="#6b4a10">Google Maps</text>
+  <text x="540" y="580" text-anchor="middle" font-size="11.5" fill="#6b4a10">Directions API</text>
+
+  <rect x="677" y="536" width="160" height="66" rx="10" fill="#fff6ea" stroke="#e0a232" stroke-width="1.6"></rect>
+  <text x="757" y="562" text-anchor="middle" font-size="13" font-weight="650" fill="#6b4a10">Google Search</text>
+  <text x="757" y="580" text-anchor="middle" font-size="11.5" fill="#6b4a10">built-in ADK tool</text>
+</svg>
